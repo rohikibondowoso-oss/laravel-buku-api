@@ -52,7 +52,7 @@ class BookController extends Controller
             return response()->json(['message' => 'Buku tidak ditemukan'], 404);
         }
 
-        // Cek kepemilikan buku (tidak boleh akses buku user lain)
+        // Cek kepemilikan buku 
         if ($book->user_id !== Auth::id()) {
             return response()->json(['message' => 'Unauthorized: Anda tidak memiliki akses ke buku ini'], 403);
         }

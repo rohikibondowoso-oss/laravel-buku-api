@@ -27,7 +27,7 @@ class AuthTokenApi
                 ], 404);
             }
 
-            // Validasi: Pastikan buku milik user yang sedang aktif mengirim token
+            // Validasi
             if ($book->user_id !== $request->user()->id) {
                 return response()->json([
                     'message' => 'Akses ditolak. Anda tidak berhak mengakses, mengedit, atau menghapus buku milik user lain.'
